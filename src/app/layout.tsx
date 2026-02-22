@@ -1,40 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-
-export const metadata = {
-  title: "JLeonardo (FERA) | @jleobotti | Moda, Empreendedorismo e Lifestyle",
-  description: "Influenciador digital,企业家 e creator. Siga @jleobotti no Instagram e TikTok.",
-  openGraph: {
-    title: "JLeonardo (FERA) | @jleobotti",
-    description: "Influenciador digital, empreendedor e creator. Siga @jleobotti!",
-    url: "https://jleobotti.com.br",
-    siteName: "JLeonardo FERA",
-    locale: "pt_BR",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "JLeonardo (FERA) | @jleobotti",
-    description: "Influenciador digital, empreendedor e creator. Siga @jleobotti!",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
-
-function getWhatsAppLink(context: string = "") {
-  const baseUrl = "https://wa.me/5544998862409";
-  let message = "Olá! Vim pelo site do JLeonardo (FERA). Gostaria de saber mais sobre suas parcerias.";
-  
-  if (context) {
-    message = `Olá! Vim pelo site do JLeonardo (FERA). Gostaria de saber mais sobre ${context}.`;
-  }
-  
-  return `${baseUrl}?text=${encodeURIComponent(message)}`;
-}
 
 export default function RootLayout({
   children,
@@ -104,7 +70,6 @@ function Header({ mobileMenuOpen, setMobileMenuOpen }: { mobileMenuOpen: boolean
         </div>
       </header>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-white md:hidden">
           <div className="p-6 pt-20">
