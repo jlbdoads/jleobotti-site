@@ -1,40 +1,64 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #1a1a1a;
-  --accent: #C9A227;
-  --accent-light: #D4B94A;
-  --dark: #0a0a0a;
-  --light: #fafafa;
-  --gray: #666;
+  --primary: #1B5E3E;
+  --gold: #BFA76F;
+  --gold-light: #D4C4A0;
+  --dark: #0D0D0D;
+  --dark-card: #1A1A1A;
+  --white: #FFFFFF;
+  --gray: #808080;
 }
 
 body {
-  background-color: var(--light);
-  color: var(--dark);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--dark);
+  color: var(--white);
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+.gradient-bg {
+  background: linear-gradient(-45deg, #0D0D0D, #1a1a1a, #0D0D0D);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.glow-gold {
+  box-shadow: 0 0 40px rgba(191, 167, 111, 0.15);
+}
+
 .text-gradient {
-  background: linear-gradient(135deg, #C9A227, #D4B94A);
+  background: linear-gradient(135deg, #BFA76F, #D4C4A0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.glass-dark {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.glass:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }

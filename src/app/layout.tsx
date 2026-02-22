@@ -13,7 +13,7 @@ export default function RootLayout({
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
-      <body className="antialiased font-['Outfit']">
+      <body className="antialiased font-['Outfit'] bg-[#0D0D0D] text-white">
         <Header />
         <main>{children}</main>
         <Footer />
@@ -27,20 +27,20 @@ function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0D0D0D]/95 backdrop-blur-lg border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">F</span>
+            <div className="w-10 h-10 bg-[#BFA76F] rounded-full flex items-center justify-center">
+              <span className="text-[#0D0D0D] font-bold text-lg">F</span>
             </div>
             <span className="font-bold text-xl">FERA</span>
           </a>
           
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#sobre" className="text-gray-600 hover:text-black font-medium">Sobre</a>
-            <a href="#números" className="text-gray-600 hover:text-black font-medium">Números</a>
-            <a href="#pacotes" className="text-gray-600 hover:text-black font-medium">Pacotes</a>
-            <a href="#contato" className="text-gray-600 hover:text-black font-medium">Contato</a>
+            <a href="#sobre" className="text-white/70 hover:text-[#BFA76F] font-medium">Sobre</a>
+            <a href="#números" className="text-white/70 hover:text-[#BFA76F] font-medium">Números</a>
+            <a href="#pacotes" className="text-white/70 hover:text-[#BFA76F] font-medium">Pacotes</a>
+            <a href="#contato" className="text-white/70 hover:text-[#BFA76F] font-medium">Contato</a>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -52,7 +52,7 @@ function Header() {
       </header>
 
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white md:hidden">
+        <div className="fixed inset-0 z-40 bg-[#0D0D0D] md:hidden">
           <div className="p-6 pt-20">
             <nav className="space-y-4">
               <a href="#sobre" onClick={() => setMobileMenuOpen(false)} className="block text-2xl font-bold">Sobre</a>
@@ -69,17 +69,17 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="bg-black text-white py-12">
+    <footer className="bg-[#0D0D0D] border-t border-white/10 py-12">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center">
           <div className="flex justify-center gap-6 mb-6">
             <a href="https://instagram.com/jleobotti" target="_blank" rel="noopener noreferrer" className="text-3xl hover:scale-110 transition-transform">📸</a>
             <a href="https://tiktok.com/@jleobotti" target="_blank" rel="noopener noreferrer" className="text-3xl hover:scale-110 transition-transform">🎵</a>
           </div>
-          <p className="text-white/60 mb-4">© 2026 JLeonardo - FERA. Todos os direitos reservados.</p>
-          <p className="text-white/40 text-sm">
+          <p className="text-white/50 mb-4">© 2026 JLeonardo - FERA. Todos os direitos reservados.</p>
+          <p className="text-white/30 text-sm">
             Criado por{' '}
-            <a href="https://wa.me/5544988186488" className="text-[#C9A227] hover:underline">jlbdo.ads</a>
+            <a href="https://wa.me/5544988186488" className="text-[#BFA76F] hover:underline">jlbdo.ads</a>
           </p>
         </div>
       </div>
