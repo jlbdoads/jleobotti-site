@@ -8,15 +8,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <html lang="pt-BR">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body className="antialiased font-['Outfit']">
-        <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+        <Header />
         <main>{children}</main>
         <Footer />
       </body>
@@ -24,11 +22,8 @@ export default function RootLayout({
   );
 }
 
-function Header({ mobileMenuOpen, setMobileMenuOpen }: { mobileMenuOpen: boolean; setMobileMenuOpen: (open: boolean) => void }) {
-  const socials = [
-    { name: "Instagram", icon: "📸", url: "https://instagram.com/jleobotti" },
-    { name: "TikTok", icon: "🎵", url: "https://tiktok.com/@jleobotti" },
-  ];
+function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -43,30 +38,15 @@ function Header({ mobileMenuOpen, setMobileMenuOpen }: { mobileMenuOpen: boolean
           
           <nav className="hidden md:flex items-center gap-6">
             <a href="#sobre" className="text-gray-600 hover:text-black font-medium">Sobre</a>
-            <a href="#redes" className="text-gray-600 hover:text-black font-medium">Redes</a>
-            <a href="#parcerias" className="text-gray-600 hover:text-black font-medium">Parcerias</a>
+            <a href="#números" className="text-gray-600 hover:text-black font-medium">Números</a>
+            <a href="#pacotes" className="text-gray-600 hover:text-black font-medium">Pacotes</a>
             <a href="#contato" className="text-gray-600 hover:text-black font-medium">Contato</a>
           </nav>
 
           <div className="flex items-center gap-3">
-            {socials.map((social) => (
-              <a 
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl hover:scale-110 transition-transform"
-                title={social.name}
-              >
-                {social.icon}
-              </a>
-            ))}
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-2xl"
-            >
-              ☰
-            </button>
+            <a href="https://instagram.com/jleobotti" target="_blank" rel="noopener noreferrer" className="text-2xl hover:scale-110 transition-transform">📸</a>
+            <a href="https://tiktok.com/@jleobotti" target="_blank" rel="noopener noreferrer" className="text-2xl hover:scale-110 transition-transform">🎵</a>
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-2xl">☰</button>
           </div>
         </div>
       </header>
@@ -76,8 +56,8 @@ function Header({ mobileMenuOpen, setMobileMenuOpen }: { mobileMenuOpen: boolean
           <div className="p-6 pt-20">
             <nav className="space-y-4">
               <a href="#sobre" onClick={() => setMobileMenuOpen(false)} className="block text-2xl font-bold">Sobre</a>
-              <a href="#redes" onClick={() => setMobileMenuOpen(false)} className="block text-2xl font-bold">Redes</a>
-              <a href="#parcerias" onClick={() => setMobileMenuOpen(false)} className="block text-2xl font-bold">Parcerias</a>
+              <a href="#números" onClick={() => setMobileMenuOpen(false)} className="block text-2xl font-bold">Números</a>
+              <a href="#pacotes" onClick={() => setMobileMenuOpen(false)} className="block text-2xl font-bold">Pacotes</a>
               <a href="#contato" onClick={() => setMobileMenuOpen(false)} className="block text-2xl font-bold">Contato</a>
             </nav>
           </div>
